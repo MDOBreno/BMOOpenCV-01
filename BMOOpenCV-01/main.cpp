@@ -7,9 +7,21 @@
 //
 
 #include <iostream>
+#include <opencv2/opencv.hpp>
+#include <stdio.h>
+#include <stdlib.h>
 
-int main(int argc, const char * argv[]) {
+using namespace cv;
+using namespace std;
+
+int main(int argv, char** argc) {
+//int main(int argc, const char * argv[]) {
     // insert code here...
-    std::cout << "Hello, World!\n";
+    String caminho = "/Users/brenomedeiros/Documents/ProgramasBMO/Cpp/BMOOpenCV-01/BMOOpenCV-01/Images/";
+    cout << "OpenCV Version " << CV_VERSION << std::endl;
+    //Mat test  = cv::imwrite();
+    Mat teste = imread(caminho+"Me.jpeg", CV_LOAD_IMAGE_UNCHANGED);
+    imshow("teste", teste);
+    waitKey();
     return 0;
 }
